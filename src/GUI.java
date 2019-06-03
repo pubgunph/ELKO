@@ -15,27 +15,26 @@ public class GUI {
             JFrame derTest = new JFrame("Hauptfenster mit verschiedenen Steuerelementen");
 
             // Einstellen der Position und Größe des Hauptfensters
-                    derTest.setLocation(0,0);
+            derTest.setLocation(0,0);
             derTest.setSize(450,450);
             // Knopf erzeugen
             knopf = new JButton();
-            ImageIcon diceIcon = new ImageIcon(getClass().getResource("/images/DiceIcon.png"));
-            knopf.setIcon(new ImageIcon("~/Documents/workspace/ELKO/Program.ico"));
-            knopf.setBorder(BorderFactory.createEmptyBorder());
-            //knopf.setContentAreaFilled(false);
-            // Zeichenfläche erzeugen, Hintergrundfarbe und Größe
-            // einstellen
-            // Textzeile erzeugen
-            beschriftung = new JLabel("Hier ist die Beschriftung");
-            // Kombinationsfeld erzeugen und fünf Einträge hinzufügen
+            BufferedImage myPicture = null;
+            try {
+                 myPicture = ImageIO.read(new File("src/download.jpg"));
+            } catch (IOException e) {
+                 e.printStackTrace();
+            }
+            knopf.setIcon(new ImageIcon(myPicture));
+            //knopf.setBorder(BorderFactory.createEmptyBorder());
+            knopf.setContentAreaFilled(false);
 
             flaeche = new JPanel();
             //flaeche.setSize(derTest.getSize());
             //flaeche.setLocation(0,0);
-            //flaeche.setLayout(new GridLayout(2,1));
+            flaeche.setLayout(new BorderLayout());
             // Steuerelemente zur Fläche hinzufügen
             flaeche.add(knopf);
-            //flaeche.add(beschriftung);
             derTest.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             // Fläche dem Hauptfenster hinzufügen
             derTest.getContentPane().add(flaeche);
