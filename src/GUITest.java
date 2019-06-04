@@ -29,7 +29,6 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package layout;
 
 /*
  * GridBagLayoutDemo.java requires no other files.
